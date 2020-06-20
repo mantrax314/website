@@ -1,21 +1,21 @@
 ---
-title: "Users"
+title: "Usuarios"
 draft: false
 weight: 8
 ---
 
-##### Awesome project lists using [Gin](https://github.com/gin-gonic/gin) web framework:
+##### Lista de proyectos fantásticos que usan [Gin](https://github.com/gin-gonic/gin) web framework:
 
-* [gorush](https://github.com/appleboy/gorush): A push notification server written in Go.
+* [gorush](https://github.com/appleboy/gorush): Servidor de notificaciones push escrito en Go.
 
-* [fnproject](https://github.com/fnproject/fn): The container native, cloud agnostic serverless platform.
+* [fnproject](https://github.com/fnproject/fn): Plataforma serverless basada en contenedores nativamente, y agnóstica de cloud.
 
-* [photoprism](https://github.com/photoprism/photoprism): Personal photo management powered by Go and Google TensorFlow.
+* [photoprism](https://github.com/photoprism/photoprism): Administrador de fotos personales basado en Go y TensorFlow.
 
-* [krakend](https://github.com/devopsfaith/krakend): Ultra performant API Gateway with middlewares.
+* [krakend](https://github.com/devopsfaith/krakend): Gateway API de ultra rendimiento con middlewares.
 
-* [picfit](https://github.com/thoas/picfit): An image resizing server written in Go.
+* [picfit](https://github.com/thoas/picfit): Servidor de cambio de tamaño de imagen escrito en Go.
 
-* [gotify](https://github.com/gotify/server): A simple server for sending and receiving messages in real-time per web socket.
+* [gotify](https://github.com/gotify/server): Un servidor simple para enviar y recibir mensajes en tiempo real a través de web sockets.
 
-* [cds](https://github.com/ovh/cds): Enterprise-Grade Continuous Delivery & DevOps Automation Open Source Platform.
+* [cds](https://github.com/ovh/cds): Plataforma open source de Continuous Delivery y automatización DevOps de nivel empresarial.
