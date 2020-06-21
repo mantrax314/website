@@ -1,5 +1,5 @@
 ---
-title: "Deployment"
+title: "Despliegue"
 draft: false
 weight: 6
 ---
