@@ -1,47 +1,46 @@
 ---
-title: "Introduction"
+title: "Introducción"
 draft: false
 weight: 1
 ---
 
-Gin is a web framework written in Go (Golang). It features a martini-like API with much better performance, up to 40 times faster thanks to [httprouter](https://github.com/julienschmidt/httprouter). If you need performance and good productivity, you will love Gin.
+Gin es un framework para desarrollo web escrito en Go (Golang). Cuenta con una API tipo martini, con un rendimiento mucho mayor, hasta 40 veces más rápido gracias a [httprouter](https://github.com/julienschmidt/httprouter). Si necesitas rendimiento y productividad amarás a Gin.
 
-In this section we will walk through what Gin is, what problems it solves, and how it can help your project.
+En esta sección veremos qué es Gin, qué problemas resuelve y cómo puede ayudar a tu proyecto.
 
-Or, if you are ready to use Gin in to your project, visit the [Quickstart](https://gin-gonic.com/docs/quickstart/).
+O, si está listo para usar Gin en su proyecto, visita el [Inicio Rápido](https://gin-gonic.com/es/docs/quickstart/).
 
-## Features
+## Características
 
-### Fast
+### Veloz
 
-Radix tree based routing, small memory foot print. No reflection. Predictable API performance. 
+Enrutamiento basado en Radix tree, poco consumo de memoria. Sin reflection. Rendimiento predecible del API.
 
-### Middleware support
+### Soporte de middleware
 
-An incoming HTTP request can be handled by a chain of middlewares and the final action. 
-For example: Logger, Authorization, GZIP and finally post a message in the DB.
+Una petición entrante HTTP puede ser manejada por diversos middleware encadenados y la acción final.
+Ejemplo: Logger, Authorization, GZIP y por úlitmo guardar el mensaje en la BD.
 
-### Crash-free
+### Libre de crashes
 
-Gin can catch a panic occurred during a HTTP request and recover it. This way, your server will be always available. As an example - it’s also possible to report this panic to Sentry!
+Gin puede recibir y recuperarse de un panic ocurrido durante una petición HTTP. Así tu servidor estará siempre disponible. También es posible hacer un reporte del panic, por ejemplo ¡a Sentry!
 
-### JSON validation 
+### Validación de JSON
 
-Gin can parse and validate the JSON of a request - for example,checking the existence of required values.
+Gin permite analizar y validar datos JSON en una petición, y por ejemplo, revisar la existencia de datos requeridos.
 
-### Routes grouping
+### Agrupación de rutas
 
-Organize your routes better. Authorization required vs non required, different API versions... In addition, the groups can be nested unlimitedly without degrading performance.
+Organiza mejor tus rutas: Rutas con autorización vs rutas públicas, versiones diferentes de API. Adicionalmente los grupos de rutas pueden anidarse ilimitadamente sin afectar el rendimiento.
 
-### Error management
+### Manejo de errores
 
-Gin provides a convenient way to collect all the errors occurred during a HTTP request. Eventually, a middleware can write them to a log file, to a database and send them through the network.
+Gin ofrece una conveniente forma de recopilar los errores ocurridos durante una petición HTTP. Un middleware puede incluso registrarlos en un archivo de logs, la BD o enviarlos por la red.
 
-### Rendering built-in
+### Render incluído
 
-Gin provides a easy to use API for JSON, XML and HTML rendering.
+Gin cuenta con una API fácil de usar para el render de JSON, XML y HTML.
 
-### Extendable
+### Extensible
 
-Creating a new middleware is so easy, just check out the sample codes.
-
+Crear un middleware nuevo es muy sencillo. Sólo debes revisar los códigos de ejemplo.
