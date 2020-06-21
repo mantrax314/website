@@ -4,10 +4,10 @@ draft: false
 weight: 5
 ---
 
-## Build with [jsoniter](https://github.com/json-iterator/go)
+## Go Build con [jsoniter](https://github.com/json-iterator/go)
 
-Gin uses `encoding/json` as default json package but you can change to [jsoniter](https://github.com/json-iterator/go) by build from other tags.
+Gin utiliza `encoding/json` como paquete por defecto para json, pero se puede cambiar por [jsoniter](https://github.com/json-iterator/go) especificándolo en el tag al hacer go build.
 
 ```sh
 $ go build -tags=jsoniter .
-``` 
+```
