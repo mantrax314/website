@@ -1,69 +1,69 @@
 ---
-title: "Quickstart"
+title: "Inicio Rápido"
 draft: false
 weight: 2
 ---
 
-In this quickstart, we’ll glean insights from code segments and learn how to:
+En este inicio rápido, captaremos información y aprenderemos por medio de porciones de código:
 
-## Requirements
+## Requerimientos
 
-- Go 1.9 or above
+- Go 1.9 o superior
 
-> Go 1.7 or Go 1.8 will be no longer supported soon.
+> Las versiones de Go 1.7 ó Go 1.8 dejarán de ser compatibles pronto.
 
-## Installation
+## Instalación
 
-To install Gin package, you need to install Go and set your Go workspace first.
+Para instalar Gin, primero debe instalar Go y configurar el espacio de trabajo Go.
 
-1. Download and install it:
+1. Descargar e instalar:
 
 ```sh
 $ go get -u github.com/gin-gonic/gin
 ```
 
-2. Import it in your code:
+2. Importar en el código:
 
 ```go
 import "github.com/gin-gonic/gin"
 ```
 
-3. (Optional) Import `net/http`. This is required for example if using constants such as `http.StatusOK`.
+3. Importar el paquete `net/http` (Opcional). Es requerido para el uso de constantes como por ejemplo `http.StatusOK`.
 
 ```go
 import "net/http"
 ```
 
-1. Create your project folder and `cd` inside
+1. Crear la carpeta del proyecto e ingresar en ella con `cd`
 
 ```sh
 $ mkdir -p $GOPATH/src/github.com/myusername/project && cd "$_"
 ```
 
-2. Copy a starting template inside your project
+2. Copiar una plantilla de inicio dentro del proyecto
 
 ```sh
 $ curl https://raw.githubusercontent.com/gin-gonic/examples/master/basic/main.go > main.go
 ```
 
-3. Run your project
+3. Ejecutar el proyecto
 
 ```sh
 $ go run main.go
 ```
 
-## Getting Started
+## Primeros Pasos
 
-> Unsure how to write and execute Go code? [Click here](https://golang.org/doc/code.html).
+> ¿No sabes cómo escribir y ejecutar código Go? [Click aquí](https://golang.org/doc/code.html).
 
-First, create a file called `example.go`:
+Primero, crear un archivo llamado `example.go`:
 
 ```sh
-# assume the following codes in example.go file
+# asumimos que el código siguiente se encontrará en el archivo example.go
 $ touch example.go
 ```
 
-Next, put the following code inside of `example.go`:
+A continuación, coloque el siguiente código dentro en `example.go`:
 
 ```go
 package main
@@ -77,14 +77,14 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.Run() // listen and serve on 0.0.0.0:8080
+	r.Run() // Sirve y escucha peticiones en 0.0.0.0:8080
 }
 ```
 
-And, You can run the code via `go run example.go`:
+Y ahora, puede ejecutar el código a través de `go run example.go`:
 
 ```sh
-# run example.go and visit 0.0.0.0:8080/ping on browser
+# ejecuta example.go y visita 0.0.0.0:8080/ping en el navegador
 $ go run example.go
 ```
 
