@@ -4,5 +4,4 @@ draft: false
 weight: 9
 ---
 
-TODO: record some frequently asked question from GitHub Issue tab.
-
+TODO: Se registrarán las preguntas frecuentes de la sección para [issues de GitHub](https://github.com/gin-gonic/gin/issues).
