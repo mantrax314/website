@@ -1,9 +1,9 @@
 ---
-title: "Bind form-data request with custom struct"
+title: "Vincular una petición form-data con un struct personalizado"
 draft: false
 ---
 
-The follow example using custom struct:
+El siguiente es el ejemplo para un struct personalizado:
 
 ```go
 type StructA struct {
@@ -64,7 +64,7 @@ func main() {
 }
 ```
 
-Using the command `curl` command result:
+Empleando el comando `curl` las respuestas serían:
 
 ```
 $ curl "http://localhost:8080/getb?field_a=hello&field_b=world"
@@ -74,4 +74,3 @@ $ curl "http://localhost:8080/getc?field_a=hello&field_c=world"
 $ curl "http://localhost:8080/getd?field_x=hello&field_d=world"
 {"d":"world","x":{"FieldX":"hello"}}
 ```
-
