@@ -1,9 +1,9 @@
 ---
-title: "Bind query string or post data"
+title: "Vincular parámetros get o data Post"
 draft: false
 ---
 
-See the [detail information](https://github.com/gin-gonic/gin/issues/742#issuecomment-264681292).
+Revise la [información detallada](https://github.com/gin-gonic/gin/issues/742#issuecomment-264681292).
 
 ```go
 package main
@@ -29,9 +29,9 @@ func main() {
 
 func startPage(c *gin.Context) {
 	var person Person
-	// If `GET`, only `Form` binding engine (`query`) used.
-	// If `POST`, first checks the `content-type` for `JSON` or `XML`, then uses `Form` (`form-data`).
-	// See more at https://github.com/gin-gonic/gin/blob/master/binding/binding.go#L48
+	// Si se usa `GET`, únicamente  es empleado el `Form` binding engine (`query`).
+	// Si se emplea `POST`, se revisa primero el `content-type` para `JSON` o `XML`, para así usar entonces `Form` (`form-data`).
+	// Véase más en https://github.com/gin-gonic/gin/blob/master/binding/binding.go#L48
 	if c.ShouldBind(&person) == nil {
 		log.Println(person.Name)
 		log.Println(person.Address)
@@ -42,7 +42,7 @@ func startPage(c *gin.Context) {
 }
 ```
 
-Test it with:
+Puede probar con:
 ```sh
 $ curl -X GET "localhost:8085/testing?name=appleboy&address=xyz&birthday=1992-03-15"
 ```

@@ -1,9 +1,9 @@
 ---
-title: "Bind html checkboxes"
+title: "Ligar checkboxes html"
 draft: false
 ---
 
-See the [detail information](https://github.com/gin-gonic/gin/issues/129#issuecomment-124260092)
+Revise la [información detallada](https://github.com/gin-gonic/gin/issues/129#issuecomment-124260092)
 
 main.go
 
@@ -41,7 +41,7 @@ form.html
 </form>
 ```
 
-result:
+resultado:
 
 ```sh
 {"color":["red","green","blue"]}
