@@ -1,9 +1,9 @@
 ---
-title: "Build a single binary with templates"
+title: "Crear un ejecutable individual con templates"
 draft: false
 ---
 
-You can build a server into a single binary containing templates by using [go-assets](https://github.com/jessevdk/go-assets).
+Puede crear un servidor en un solo binario que contenga templates usando [go-assets](https://github.com/jessevdk/go-assets).
 
 ```go
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	r.Run(":8080")
 }
 
-// loadTemplate loads templates embedded by go-assets-builder
+// loadTemplate carga templates incrustadas por medio de go-assets-builder
 func loadTemplate() (*template.Template, error) {
 	t := template.New("")
 	for name, file := range Assets.Files {
@@ -41,5 +41,5 @@ func loadTemplate() (*template.Template, error) {
 }
 ```
 
-See a complete example in the `https://github.com/gin-gonic/examples/tree/master/assets-in-binary` directory.
+Puede ver un ejemplo completo en el directorio `https://github.com/gin-gonic/examples/tree/master/assets-in-binary`.
 

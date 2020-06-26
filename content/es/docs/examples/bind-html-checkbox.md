@@ -1,5 +1,5 @@
 ---
-title: "Ligar checkboxes html"
+title: "Vincular checkboxes html"
 draft: false
 ---
 
