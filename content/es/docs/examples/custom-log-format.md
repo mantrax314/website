@@ -1,5 +1,5 @@
 ---
-title: "Archivos de log personalizados"
+title: "Personalizar formato de Logs"
 draft: false
 ---
 
