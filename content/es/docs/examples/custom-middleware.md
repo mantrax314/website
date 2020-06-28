@@ -1,5 +1,5 @@
 ---
-title: "Custom Middleware"
+title: "Personalizar un Middleware"
 draft: false
 ---
 
@@ -8,18 +8,18 @@ func Logger() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		t := time.Now()
 
-		// Set example variable
+		// Establecer el valor de la variable example
 		c.Set("example", "12345")
 
-		// before request
+		// antes de la petición
 
 		c.Next()
 
-		// after request
+		// después de la petición
 		latency := time.Since(t)
 		log.Print(latency)
 
-		// access the status we are sending
+		// acceso al estatus que se está enviando
 		status := c.Writer.Status()
 		log.Println(status)
 	}
@@ -32,11 +32,11 @@ func main() {
 	r.GET("/test", func(c *gin.Context) {
 		example := c.MustGet("example").(string)
 
-		// it would print: "12345"
+		// debe retornar: "12345"
 		log.Println(example)
 	})
 
-	// Listen and serve on 0.0.0.0:8080
+	// Escucha y sirve peticiones en 0.0.0.0:8080
 	r.Run(":8080")
 }
 ```
