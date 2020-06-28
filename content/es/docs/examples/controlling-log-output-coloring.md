@@ -1,44 +1,44 @@
 ---
-title: "Controlling Log output coloring"
+title: "Controlar el color del texto del Log en cónsola"
 draft: false
 ---
 
-By default, logs output on console should be colorized depending on the detected TTY.
+Por defecto la la salida en cónsola puede tener color, dependiendo del TTY detectado.
 
-Never colorize logs: 
+Definir logs monocromáticos:
 
 ```go
 func main() {
-    // Disable log's color
+    // Deshabilita el color del log
     gin.DisableConsoleColor()
     
-    // Creates a gin router with default middleware:
-    // logger and recovery (crash-free) middleware
+    // Crea un route de gin con middleware por defecto:
+    // logger y recovery (crash-free) middleware
     router := gin.Default()
     
     router.GET("/ping", func(c *gin.Context) {
         c.String(200, "pong")
     })
-    
+    // Escucha y sirve peticiones en 0.0.0.0:8080
     router.Run(":8080")
 }
 ```
 
-Always colorize logs: 
+Definir logs siempre colorizados:
 
 ```go
 func main() {
-    // Force log's color
+    // Obliga a generar logs siempre con colores
     gin.ForceConsoleColor()
     
-    // Creates a gin router with default middleware:
-    // logger and recovery (crash-free) middleware
+    // Crea un route de gin con middleware por defecto:
+    // logger y recovery (crash-free) middleware
     router := gin.Default()
     
     router.GET("/ping", func(c *gin.Context) {
         c.String(200, "pong")
     })
-    
+    // Escucha y sirve peticiones en 0.0.0.0:8080
     router.Run(":8080")
 }
 ```
