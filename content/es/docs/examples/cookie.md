@@ -1,5 +1,5 @@
 ---
-title: "Set and get a cookie"
+title: "Crear y obtener una cookie"
 draft: false
 ---
 
