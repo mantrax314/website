@@ -1,12 +1,11 @@
 ---
-title: "Graceful restart or stop"
+title: "Apagado o reinicio controlado del servidor web"
 draft: false
 ---
 
-Do you want to graceful restart or stop your web server?
-There are some ways this can be done.
+Estas son algunas formas de reiniciar o detener el servidor web controladamente.
 
-We can use [fvbock/endless](https://github.com/fvbock/endless) to replace the default `ListenAndServe`. Refer issue [#296](https://github.com/gin-gonic/gin/issues/296) for more details.
+Se puede utilizar [fvbock/endless](https://github.com/fvbock/endless) para sustituir al `ListenAndServe` por defecto. Véase más detalles en [#296](https://github.com/gin-gonic/gin/issues/296).
 
 ```go
 router := gin.Default()
@@ -15,13 +14,13 @@ router.GET("/", handler)
 endless.ListenAndServe(":4242", router)
 ```
 
-An alternative to endless:
+Alternativas de endless:
 
-* [manners](https://github.com/braintree/manners): A polite Go HTTP server that shuts down gracefully.
-* [graceful](https://github.com/tylerb/graceful): Graceful is a Go package enabling graceful shutdown of an http.Handler server.
-* [grace](https://github.com/facebookgo/grace): Graceful restart & zero downtime deploy for Go servers.
+* [manners](https://github.com/braintree/manners): Un servidor HTTP para Go con apagado controlado.
+* [graceful](https://github.com/tylerb/graceful): Graceful es un paquete de Go que habilita el apagado controlado de un servidor http.Handler.
+* [grace](https://github.com/facebookgo/grace): Reinicio controlado y despliegue para servidores Go con libre de interrupción del servicio.
 
-If you are using Go 1.8, you may not need to use this library! Consider using http.Server's built-in [Shutdown()](https://golang.org/pkg/net/http/#Server.Shutdown) method for graceful shutdowns. See the full [graceful-shutdown](https://github.com/gin-gonic/examples/tree/master/graceful-shutdown) example with gin.
+Si estás usando Go 1.8, no necesitas hacer uso de esta librería!. Considera el uso del método [Shutdown()](https://golang.org/pkg/net/http/#Server.Shutdown) que viene incluído en `http.Server` para el apagado controlado. Véase el ejemplo de [apagado controlado](https://github.com/gin-gonic/examples/tree/master/graceful-shutdown) con Gin.
 
 ```go
 // +build go1.8
@@ -53,18 +52,18 @@ func main() {
 	}
 
 	go func() {
-		// service connections
+		// conexiones de servicio
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("listen: %s\n", err)
 		}
 	}()
 
-	// Wait for interrupt signal to gracefully shutdown the server with
-	// a timeout of 5 seconds.
+	// Espera por la señal de interrupción para el apagado controlado del servidor
+	// con un tiempo de espera de 5 segundos.
 	quit := make(chan os.Signal)
-	// kill (no param) default send syscanll.SIGTERM
-	// kill -2 is syscall.SIGINT
-	// kill -9 is syscall. SIGKILL but can"t be catch, so don't need add it
+	// kill (sin parámetro) envío por defecto de la señal syscanll.SIGTERM
+	// kill -2 es syscall.SIGINT
+	// kill -9 es syscall.SIGKILL pero no se puede atrapar, así que no es necesario agregarlo
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
 	log.Println("Shutdown Server ...")
@@ -74,7 +73,7 @@ func main() {
 	if err := srv.Shutdown(ctx); err != nil {
 		log.Fatal("Server Shutdown:", err)
 	}
-	// catching ctx.Done(). timeout of 5 seconds.
+	// controlando ctx.Done(). tiempo de espera de 5 segundos.
 	select {
 	case <-ctx.Done():
 		log.Println("timeout of 5 seconds.")
@@ -82,4 +81,3 @@ func main() {
 	log.Println("Server exiting")
 }
 ```
-
