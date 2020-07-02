@@ -7,7 +7,7 @@ draft: false
 func main() {
 	router := gin.Default()
 
-	// Simple group: v1
+	// Grupo simple con ruta: v1
 	v1 := router.Group("/v1")
 	{
 		v1.POST("/login", loginEndpoint)
@@ -15,7 +15,7 @@ func main() {
 		v1.POST("/read", readEndpoint)
 	}
 
-	// Simple group: v2
+	// Grupo simple con ruta: v2
 	v2 := router.Group("/v2")
 	{
 		v2.POST("/login", loginEndpoint)
