@@ -1,5 +1,5 @@
 ---
-title: "HTML rendering"
+title: "Representación de HTML"
 draft: false
 ---
 
@@ -29,7 +29,7 @@ templates/index.tmpl
 </html>
 ```
 
-Using templates with same name in different directories
+Utilizando plantillas de mismo nombre en directorios diferentes
 
 ```go
 func main() {
@@ -73,9 +73,9 @@ templates/users/index.tmpl
 {{ end }}
 ```
 
-### Custom Template renderer
+### Representación de Plantilla personalizada
 
-You can also use your own html template render
+Puede emplearse una representación de plantillas html propia.
 
 ```go
 import "html/template"
@@ -88,9 +88,9 @@ func main() {
 }
 ```
 
-### Custom Delimiters
+### Configuración separadores personalizados
 
-You may use custom delims
+Pueden establecerse separadores personalizados
 
 ```go
 	r := gin.Default()
@@ -98,9 +98,9 @@ You may use custom delims
 	r.LoadHTMLGlob("/path/to/templates")
 ```
 
-### Custom Template Funcs
+### Funciones personalizadas en plantillas
 
-See the detail [example code](https://github.com/gin-gonic/examples/tree/master/template).
+Véase con más detalle el [código de ejemplo](https://github.com/gin-gonic/examples/tree/master/template).
 
 main.go
 
