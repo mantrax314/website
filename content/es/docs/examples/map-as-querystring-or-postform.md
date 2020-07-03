@@ -1,5 +1,5 @@
 ---
-title: "Map as querystring or postform parameters"
+title: "Map a partir de una cadena de parámetros GET o parámetros de un formulario POST"
 draft: false
 ---
 
