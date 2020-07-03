@@ -1,5 +1,5 @@
 ---
-title: "Multipart/Urlencoded binding"
+title: "Vincular formularios Multipart/Urlencoded"
 draft: false
 ---
 
@@ -18,11 +18,11 @@ type LoginForm struct {
 func main() {
 	router := gin.Default()
 	router.POST("/login", func(c *gin.Context) {
-		// you can bind multipart form with explicit binding declaration:
+		// se puede vincular un formulario multipart con declaración explícita:
 		// c.ShouldBindWith(&form, binding.Form)
-		// or you can simply use autobinding with ShouldBind method:
+		// o simplemente se hace auto vinculación por médio del método ShouldBind:
 		var form LoginForm
-		// in this case proper binding will be automatically selected
+		// en este caso la vinculación adecuada se seleccionará automáticamente
 		if c.ShouldBind(&form) == nil {
 			if form.User == "user" && form.Password == "password" {
 				c.JSON(200, gin.H{"status": "you are logged in"})
@@ -35,7 +35,7 @@ func main() {
 }
 ```
 
-Test it with:
+Puede probarse el código por medio del siguiente curl:
 ```sh
 $ curl -v --form user=user --form password=password http://localhost:8080/login
 ```
