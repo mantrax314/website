@@ -1,12 +1,12 @@
 ---
-title: "Using HTTP method"
+title: "Uso de un método específico de HTTP"
 draft: false
 ---
 
 ```go
 func main() {
-	// Creates a gin router with default middleware:
-	// logger and recovery (crash-free) middleware
+    // Crea un route de gin con middleware por defecto:
+    // logger y recovery (crash-free) middleware
 	router := gin.Default()
 
 	router.GET("/someGet", getting)
@@ -17,9 +17,9 @@ func main() {
 	router.HEAD("/someHead", head)
 	router.OPTIONS("/someOptions", options)
 
-	// By default it serves on :8080 unless a
-	// PORT environment variable was defined.
+	// Sirve por defecto en el puerto 8080
+	// Salvo que una Variable de entorno PORT haya sido definida
 	router.Run()
-	// router.Run(":3000") for a hard coded port
+	// router.Run(":3000") para definir por código el puerto 3000
 }
 ```
