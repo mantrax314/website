@@ -1,5 +1,5 @@
 ---
-title: "Query and post form"
+title: "Formulario POST y parámetros GET en URL"
 draft: false
 ---
 
