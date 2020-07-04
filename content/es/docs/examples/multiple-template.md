@@ -1,6 +1,6 @@
 ---
-title: "Multitemplate"
+title: "Multiplantillas"
 draft: false
 ---
 
-Gin allow by default use only one html.Template. Check [a multitemplate render](https://github.com/gin-contrib/multitemplate) for using features like go 1.6 `block template`.
+Gin permite por defecto el úso de sólo una html.Template. Puede revisar [un interpretador multi plantilas](https://github.com/gin-contrib/multitemplate) para emplear características como `block template` de go 1.6.

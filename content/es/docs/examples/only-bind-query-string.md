@@ -1,9 +1,9 @@
 ---
-title: "Only bind query string"
+title: "Vincular únicamente un parámetros GET"
 draft: false
 ---
 
-`ShouldBindQuery` function only binds the query params and not the post data. See the [detail information](https://github.com/gin-gonic/gin/issues/742#issuecomment-315953017).
+La función `ShouldBindQuery` sólo vincula parámetros GET y excluye los datos POST. Véase la [información detallada](https://github.com/gin-gonic/gin/issues/742#issuecomment-315953017).
 
 ```go
 package main
