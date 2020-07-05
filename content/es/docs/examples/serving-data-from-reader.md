@@ -1,5 +1,5 @@
 ---
-title: "Serving data from reader"
+title: "Retornando data a partir de un reader"
 draft: false
 ---
 
