@@ -1,10 +1,10 @@
 ---
-title: "Using BasicAuth middleware"
+title: "Uso del middleware BasicAuth"
 draft: false
 ---
 
 ```go
-// simulate some private data
+// Se simula una información privada
 var secrets = gin.H{
 	"foo":    gin.H{"email": "foo@bar.com", "phone": "123433"},
 	"austin": gin.H{"email": "austin@example.com", "phone": "666"},
@@ -14,8 +14,8 @@ var secrets = gin.H{
 func main() {
 	r := gin.Default()
 
-	// Group using gin.BasicAuth() middleware
-	// gin.Accounts is a shortcut for map[string]string
+	// Agrupación de rutas usando el middleware gin.BasicAuth()
+	// gin.Accounts es una abreviatura para map[string]string
 	authorized := r.Group("/admin", gin.BasicAuth(gin.Accounts{
 		"foo":    "bar",
 		"austin": "1234",
@@ -23,10 +23,10 @@ func main() {
 		"manu":   "4321",
 	}))
 
-	// /admin/secrets endpoint
-	// hit "localhost:8080/admin/secrets
+	// el endpoint /admin/secrets
+	// será para el url "localhost:8080/admin/secrets
 	authorized.GET("/secrets", func(c *gin.Context) {
-		// get user, it was set by the BasicAuth middleware
+		// para obtener user, es configurado por el middleware BasicAuth
 		user := c.MustGet(gin.AuthUserKey).(string)
 		if secret, ok := secrets[user]; ok {
 			c.JSON(http.StatusOK, gin.H{"user": user, "secret": secret})
@@ -35,7 +35,6 @@ func main() {
 		}
 	})
 
-	// Listen and serve on 0.0.0.0:8080
 	r.Run(":8080")
 }
 ```
