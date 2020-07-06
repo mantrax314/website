@@ -1,42 +1,41 @@
 ---
-title: "Using middleware"
+title: "Usando middleware"
 draft: false
 ---
 
 ```go
 func main() {
-	// Creates a router without any middleware by default
+	// Se crea el router por defecto sin ningún middleware
 	r := gin.New()
 
-	// Global middleware
-	// Logger middleware will write the logs to gin.DefaultWriter even if you set with GIN_MODE=release.
-	// By default gin.DefaultWriter = os.Stdout
+	// Middleware global
+	// El middlware Logger escribirá los logs hacia gin.DefaultWriter incluso si se configura GIN_MODE=release.
+	// Por defecto será gin.DefaultWriter = os.Stdout
 	r.Use(gin.Logger())
 
-	// Recovery middleware recovers from any panics and writes a 500 if there was one.
+	// El middleware Recovery recupera al servicio de cualquier panics y registra un error 500 si existiese uno.
 	r.Use(gin.Recovery())
 
-	// Per route middleware, you can add as many as you desire.
+	// Middleware por ruta, se pueden añadir tantos como sea necesario.
 	r.GET("/benchmark", MyBenchLogger(), benchEndpoint)
 
-	// Authorization group
+	// Grupo de Authorization
 	// authorized := r.Group("/", AuthRequired())
-	// exactly the same as:
+	// exactamente el mismo que:
 	authorized := r.Group("/")
-	// per group middleware! in this case we use the custom created
-	// AuthRequired() middleware just in the "authorized" group.
+	// Middleware por grupo. En este caso usamos el grupo creado
+	// y se aplicará AuthRequired() middleware únicamente en el grupo "authorized".
 	authorized.Use(AuthRequired())
 	{
 		authorized.POST("/login", loginEndpoint)
 		authorized.POST("/submit", submitEndpoint)
 		authorized.POST("/read", readEndpoint)
 
-		// nested group
+		// Grupo anidado
 		testing := authorized.Group("testing")
 		testing.GET("/analytics", analyticsEndpoint)
 	}
 
-	// Listen and serve on 0.0.0.0:8080
 	r.Run(":8080")
 }
 ```
